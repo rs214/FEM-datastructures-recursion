@@ -38,3 +38,11 @@ MinStack.prototype.pop = function() {
   }
   return value;
 };
+
+MinStack.prototype.peek = function() {
+  return this._storage[this._count-1];
+};
+
+MinStack.prototype.min = function() {
+  return this._min.peek();
+};
