@@ -26,6 +26,15 @@ MinStack.prototype.push = function (value) {
   return 'Max capacity reached. Remove element before adding a new one.';
 };
 
-MinStack.prototype.pop = function () {
-
-}
+MinStack.prototype.pop = function() {
+  //pop off top of min stack
+  this._min.pop();
+  //set value to be returned to a var
+  var value = this._storage[--this._count];
+  //remove value off min stack
+  delete this._storage[this._count];
+  if (this._count < 0) {
+    this._count = 0;
+  }
+  return value;
+};
